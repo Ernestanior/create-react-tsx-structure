@@ -64,6 +64,8 @@ module.exports = override(
 }
 ```
 配置完成之后，如果想引入src下的文件，直接写文件名即可，举例如下:
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s5.png"/>
+
 #### 第二种
 在项目文件目录下(与package.json同级目录)添加tsconfig.extend.json文件,内容如下:
 ```
@@ -77,8 +79,9 @@ module.exports = override(
 }
 ```
 然后在tsconfig.json中加入以下代码：```"extends": "./tsconfig.extend.json"```
-
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s4.png"/>
 配置完成之后，用符号@表示根目录src，如果想引入src下的文件，举例如下:
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s6.png"/>
 
 ### 四. 引入less/scss样式(这里的less和scss都需用低版本来兼容react，不然运行不起来)
 
