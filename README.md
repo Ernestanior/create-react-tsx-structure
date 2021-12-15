@@ -68,7 +68,7 @@ module.exports = override(
 #### 1. 引入scss(如果用less可以跳过该步骤)
 先安装低版本sass: ```npm add sass-loader@7.3.1 node-sass```
 后在 node_modules/react-scripts/config/webpack.config.js里加上
-
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/c615bc74a1a3c999d2a1a04c6970138453ac69fc/screenshot/s2.png"/>
 #### 2. 引入less
 安装低版本less和less-loader: ```npm I less@3.12.2 less-loader@7.1.0```
 然后在 node_modules/react-scripts/config/webpack.config.js里
