@@ -64,8 +64,8 @@ module.exports = override(
 }
 ```
 ##### 配置完成之后，如果想引入src下的文件，直接写文件名即可，举例如下:
-<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s4.png" width="320px"/>
-<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s5.png" width="200px"/>
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s4.png" width="220px"/>
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s5.png" width="320px"/>
 
 #### 第二种
 ##### 在项目文件目录下(与package.json同级目录)添加tsconfig.extend.json文件,内容如下:
