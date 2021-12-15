@@ -13,3 +13,41 @@
 #### 用npm或者yarn都可以
 ```Npx create-react-app test1 —template typescript```
 
+### 二. 按需引入ant-design
+
+#### 1. 安装antd
+npm add --save antd
+#### 2. 安装按需引入插件
+npm add react-app-rewired customize-cra
+npm add babel-plugin-import 
+#### 3. 修改package.json
+把原来的
+```
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+```
+改为
+```
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  }
+```
+#### 4. 在项目文件目录下(与package.json同级目录)添加config-overrides.js文件,内容如下:
+```
+const { override, fixBabelImports } = require("customize-cra");
+
+module.exports = override(
+  fixBabelImports("import", {
+    libraryName: "antd",
+    libraryDirectory: "es",
+    style: "css",
+  })
+);
+```
