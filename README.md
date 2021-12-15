@@ -11,7 +11,7 @@
 ### 一. 用create-react-app脚手架安装项目
 
 #### 用npm或者yarn都可以
-```Npx create-react-app test1 —template typescript```
+```npx create-react-app test1 —template typescript```
 
 ### 二. 按需引入ant-design
 
@@ -51,3 +51,26 @@ module.exports = override(
   })
 );
 ```
+
+### 三. 配置绝对路径，为之后文件的嵌套引入做铺垫
+在tsconfig.json中代码:
+```
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "include": ["src"]
+}
+```
+
+### 四. 引入less/scss样式(这里的less和scss都需用低版本来兼容react，不然运行不起来)
+
+#### 1. 引入scss(如果用less可以跳过该步骤)
+先安装低版本sass: ```npm add sass-loader@7.3.1 node-sass```
+后在 node_modules/react-scripts/config/webpack.config.js里加上
+
+#### 2. 引入less
+安装低版本less和less-loader: ```npm I less@3.12.2 less-loader@7.1.0```
+然后在 node_modules/react-scripts/config/webpack.config.js里
+1) 找到css顶部配置
+2) 在文件500行之后找到与下图类似的代码，仿照css的配置复制并修改成less，代码如下
