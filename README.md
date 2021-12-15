@@ -10,5 +10,6 @@
 
 ### 一. 用create-react-app脚手架安装项目
 
+#### 用npm或者yarn都可以
 ```Npx create-react-app test1 —template typescript```
-用npm或者yarn都可以
+
