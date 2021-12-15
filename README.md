@@ -52,7 +52,8 @@ module.exports = override(
 );
 ```
 
-### 三. 配置绝对路径，为之后文件的嵌套引入做铺垫
+### 三. 配置绝对路径，为之后文件的嵌套引入做铺垫，这里有两种配置方式，均以src作为根目录：
+#### 第一种
 在tsconfig.json中代码:
 ```
 {
@@ -62,6 +63,22 @@ module.exports = override(
   "include": ["src"]
 }
 ```
+配置完成之后，如果想引入src下的文件，直接写文件名即可，举例如下:
+#### 第二种
+在项目文件目录下(与package.json同级目录)添加tsconfig.extend.json文件,内容如下:
+```
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+        "@/*": ["./*"]
+    }
+  }
+}
+```
+然后在tsconfig.json中加入以下代码：```"extends": "./tsconfig.extend.json"```
+
+配置完成之后，用符号@表示根目录src，如果想引入src下的文件，举例如下:
 
 ### 四. 引入less/scss样式(这里的less和scss都需用低版本来兼容react，不然运行不起来)
 
