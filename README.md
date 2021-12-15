@@ -80,9 +80,9 @@ module.exports = override(
 }
 ```
 ##### 然后在tsconfig.json中加入以下代码：```"extends": "./tsconfig.extend.json"```
-<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s6.png" width="320px"/>
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s7.png" width="320px"/>
 ##### 配置完成之后，用符号@表示根目录src，如果想引入src下的文件，举例如下:
-<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/9221f4fe8b667850ed7496e3b98c697832440d37/screenshot/s7.png" width="320px"/>
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/9221f4fe8b667850ed7496e3b98c697832440d37/screenshot/s6.png" width="320px"/>
 
 ### 四. 引入less/scss样式(这里的less和scss都需用低版本来兼容react，不然运行不起来)
 
@@ -94,7 +94,7 @@ module.exports = override(
 安装低版本less和less-loader: ```npm I less@3.12.2 less-loader@7.1.0```
 然后在 node_modules/react-scripts/config/webpack.config.js里
 1) 找到css顶部配置
-<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/c615bc74a1a3c999d2a1a04c6970138453ac69fc/screenshot/s3.png" width="250px"/>
+<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/c615bc74a1a3c999d2a1a04c6970138453ac69fc/screenshot/s3.png" width="420px"/>
 2) 在文件500行之后找到与下图类似的代码，仿照css的配置复制并修改成less，代码如下
 <image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/c615bc74a1a3c999d2a1a04c6970138453ac69fc/screenshot/s1.png" width="520px"/>
 
