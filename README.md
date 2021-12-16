@@ -68,7 +68,7 @@ module.exports = override(
 <image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s5.png" width="320px"/>
 
 #### 第二种,以符号@作为src目录的绝对路径
-##### 使用customize-cra来覆写webpack底层配置(不清楚customize-cra用法的可以去Ant Design官网查看配置说明)
+##### 使用customize-cra来覆写webpack底层配置(不清楚customize-cra用法的可以去github上customize-cra库查看说明，Ant Design官网也有相关的配置说明)
 ##### 重写方式一
 ```
 const { override } = require('customize-cra');
