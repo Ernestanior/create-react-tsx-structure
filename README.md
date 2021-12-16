@@ -67,24 +67,57 @@ module.exports = override(
 <image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s4.png" width="220px"/>
 <image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s5.png" width="320px"/>
 
-#### 第二种
-##### 在项目文件目录下(与package.json同级目录)添加tsconfig.extend.json文件,内容如下:
+#### 第二种,以符号@作为src目录的绝对路径
+##### 使用customize-cra来覆写webpack底层配置(不清楚customize-cra用法的可以去Ant Design官网查看配置说明)
+##### 重写方式一
 ```
-{
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-        "@/*": ["./*"]
-    }
-  }
-}
+const { override } = require('customize-cra');
+const path = require("path");
+ 
+module.exports = override(
+     config =>{
+         config.resolve.alias = {
+             "@": path.resolve(__dirname, "src")
+         };
+         return config;
+     },
+);
 ```
-##### 然后在tsconfig.json中加入以下代码：```"extends": "./tsconfig.extend.json"```
-<image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/9221f4fe8b667850ed7496e3b98c697832440d37/screenshot/s7.png" width="320px"/>
+##### 重写方式二
+```
+const { override, addWebpackAlias } = require('customize-cra');
+const path = require("path");
+ 
+module.exports = override(
+    addWebpackAlias({
+        ["@"]: path.resolve(__dirname, "src")
+    }),
+);
+```
 ##### 配置完成之后，用符号@表示根目录src，如果想引入src下的文件，举例如下:
 <image src="https://github.com/Ernestanior/create-react-tsx-structure/blob/e39652c7610d2ca57a74773d71832690fa75ddf0/screenshot/s6.png" width="320px"/>
 
-### 四. 引入less/scss样式(这里的less和scss都需用低版本来兼容react，不然运行不起来)
+### 四. vsCode中配置@绝对路径的智能路径提示
+#### 1. 安装vsCode插件：Path Intellisence (插件库查找并下载)
+#### 2. vsCode中setting.json配置插件功能：（打开vscode编辑器设置，在设置中打开setting.json文件）
+```
+// 配置@路径智能提示
+  "path-intellisense.mappings": {
+    "@": "${workspaceRoot}/src"
+  }
+```
+#### 3. 在tsconfig.json中添加以下配置：
+```
+{
+  "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["src/*"]
+      }
+  }
+}
+```
+### 五. 引入less/scss样式(这里的less和scss都需用低版本来兼容react，不然运行不起来)
 
 #### 1. 引入scss(如果用less可以跳过该步骤)
 先安装低版本sass: ```npm add sass-loader@7.3.1 node-sass```
