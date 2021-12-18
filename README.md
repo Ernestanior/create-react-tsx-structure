@@ -16,10 +16,10 @@
 ### 二. 按需引入ant-design
 
 #### 1. 安装antd
-npm add --save antd
+```npm add --save antd```
 #### 2. 安装按需引入插件
-npm add react-app-rewired customize-cra
-npm add babel-plugin-import 
+```npm add react-app-rewired customize-cra
+npm add babel-plugin-import ```
 #### 3. 修改package.json
 把原来的
 ```
